@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+<script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAsmna-_mVSH78oNFaUHYEFqqE9pwBBq3I",
+    authDomain: "rainlady-98c21.firebaseapp.com",
+    databaseURL: "https://rainlady-98c21-default-rtdb.firebaseio.com",
+    projectId: "rainlady-98c21",
+    storageBucket: "rainlady-98c21.appspot.com",
+    messagingSenderId: "275026313067",
+    appId: "1:275026313067:web:61b15590f6a4f71f8b962e",
+    measurementId: "G-4RMCKNKEP2"
+  };
+  //firebase.initializeApp(config);
+  const app = firebase.initializeApp(config);
+  //const analytics = getAnalytics(app);
+
+  
+  // Get a reference to the database service
+  var database = firebase.database();
+  var starCountRef = firebase.database().ref("conpump2");
+  starCountRef.on('value', function(snapshot) {
+    console.log(snapshot.val());
+    document.getElementById("conpump2").innerHTML=snapshot.val()
+    });
+  var database = firebase.database();
+  var starCountRef = firebase.database().ref("conpump3");
+  starCountRef.on('value', function(snapshot) {
+    console.log(snapshot.val());
+    document.getElementById("conpump3").innerHTML=snapshot.val()
+    });
+  var database = firebase.database();
+  var starCountRef = firebase.database().ref("conpump2");
+  starCountRef.on('value', function(snapshot) {
+    console.log(snapshot.val("conpump3"));
+    document.getElementById().innerHTML=snapshot.val()
+    });
+  
+
+</script>
+    <link href="<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    </head>
+    
+    
+    <body>
+                   
+        <div class="menubar">
+            <div class="container">
+                <div class="logo">
+                    <h1> <img width="30" height="30" alt="See the source image" src="/data/photo/Rainlady.jpg" data-bm="12"> Rain Lady</h1>
+                </div>
+                <ul class="menu">
+                    <li onClick = " window.location = 'https://www.npmjs.com/package/unirest' ">
+                        <a href="#">Home</a>
+                    </li>
+                    <li onClick = " window.open('sensor.html') ">
+                        <a href="#">Dashboard Sensor</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    
+    
+    
+        <header class="header">
+            <div class="container">
+                <div class="header_area">
+                    <h1>USER:Taksaorn Aksornsin</h1>
+                </div>
+            </div>
+        </header>
+        
+        
+        <video class="center" width="1200" height="600" controls="controls" >
+            <source src="data/video/rainlady.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+            </video>
+            
+        <section class="info1">
+            <div class="container">
+                <div class="info1_area">
+    
+                        <img alt="See the source image" src="/data/photo/Rainlady.jpg" data-bm="12">
+                        
+                        <script>
+                        var database = firebase.database();
+                        var starCountRef = firebase.database().ref ('infor/partone');
+                        starCountRef.on('value', function(snapshot) {
+                        console.log(snapshot.val());
+                        document.getElementById('content').innerHTML = snapshot.val();
+                        });
+                        
+                        
+                        
+                        </script>
+                    
+                     <div class="info1_text">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="contact">
+            <div class="container">
+                <div class="contact_area">
+                    <h1>Contact Us</h1>
+                    <form>
+                        <label >Your Name</label><br>
+                        <input  type="text" placeholder="Your Name"><br>
+                        <label >Your Email</label><br>
+                        <input  type="email" placeholder="Your Email"><br>
+                        <label >Your Phone Number</label><br>
+                        <input  type="text" placeholder="Your Phone Number"><br>
+                        <button>send</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <h1 align = 'center'>Data from sensors</h1>
+        <p id="conpump2"></p>
+        <p id="conpump2"></p>
+
+        
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<canvas id="myChart" style="width:100%;max-width:700px" class="center" ></canvas>
+
+<script>
+
+var unirest = require('unirest');
+var Request = unirest.post('http://mockbin.com/request');
+
+var xyValues = [
+  {x:50, y:7},
+  {x:60, y:8},
+  {x:70, y:8},
+  {x:80, y:9},
+  {x:90, y:9},
+  {x:100, y:9},
+  {x:110, y:10},
+  {x:120, y:11},
+  {x:130, y:14},
+  {x:140, y:14},
+  {x:150, y:15}
+];
+
+new Chart("myChart", {
+  type: "scatter",
+  data: {
+    datasets: [{
+      pointRadius: 4,
+      pointBackgroundColor: "rgb(0,0,255)",
+      data: xyValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+      xAxes: [{ticks: {min: 40, max:160}}],
+      yAxes: [{ticks: {min: 6, max:16}}],
+    }
+  }
+});
+</script>
+        
+
+    </body>
+</html>
