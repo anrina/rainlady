@@ -1,3 +1,2 @@
-# TaksaornHW
-# EdgeAI
-# EdgeAI
+#Rainlady
+the project under chokaset application.
